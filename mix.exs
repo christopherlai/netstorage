@@ -1,6 +1,6 @@
 defmodule NetStorage.MixProject do
   @name :netstorage
-  @version "0.1.0"
+  @version "0.2.0"
 
   use Mix.Project
 
@@ -35,8 +35,8 @@ defmodule NetStorage.MixProject do
   defp deps do
     [
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
-      {:hackney, "~> 1.18", optional: true},
-      {:sweet_xml, "~> 0.7.3", optional: true}
+      {:hackney, "~> 1.18"},
+      {:sweet_xml, "~> 0.7.3"}
     ]
   end
 end

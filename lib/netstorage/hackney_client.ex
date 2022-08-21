@@ -1,4 +1,6 @@
 defmodule NetStorage.HackneyClient do
+  @moduledoc false
+
   def request(method, url, headers, body, opts \\ []) do
     case :hackney.request(method, url, headers, body, opts ++ [with_body: true]) do
       {:ok, status, _headers, body} ->
