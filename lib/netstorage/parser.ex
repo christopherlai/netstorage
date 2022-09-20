@@ -9,8 +9,6 @@ defmodule NetStorage.Parser do
   def parse_dir("Directory not found\n" = reason), do: handle_error(reason)
 
   def parse_dir(xml) do
-    IO.inspect(xml)
-
     sub = [
       directory: ~x"./@directory"s,
       files: [

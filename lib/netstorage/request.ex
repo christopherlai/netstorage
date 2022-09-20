@@ -20,7 +20,7 @@ defmodule NetStorage.Request do
         Config.new()
       end
 
-    http_otps = http_opts(opts) |> IO.inspect()
+    http_otps = http_opts(opts)
 
     full_path = "/#{config.content_provider_code}#{op.path}"
     headers = build_headers(op, config, full_path)
@@ -63,7 +63,6 @@ defmodule NetStorage.Request do
     |> Kernel.++(action)
     |> Kernel.++(op.opts)
     |> URI.encode_query()
-    |> IO.inspect()
   end
 
   defp default_actions(op), do: [version: op.version]
