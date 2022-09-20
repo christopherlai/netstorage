@@ -244,7 +244,7 @@ defmodule NetStorage do
 
   [https://techdocs.akamai.com/netstorage-usage/reference/put-upload](https://techdocs.akamai.com/netstorage-usage/reference/put-upload)
   """
-  @spec upload(path :: path(), opts :: action_opts()) :: any()
+  @spec upload(path :: path(), blob :: binary(), opts :: action_opts()) :: any()
   def upload(path, blob, opts \\ []) do
     [
       method: :put,
@@ -260,10 +260,8 @@ defmodule NetStorage do
   @doc """
   Performs NetStorage request.
   """
-  @spec(
-    request(operation :: Operation.t(), opts :: request_opts()) :: :ok | {:ok, term()} | :error,
-    {:error, term()}
-  )
+  @spec request(operation :: Operation.t(), opts :: request_opts()) ::
+          :ok | {:ok, term()} | :error | {:error, term()}
   def request(op, opts \\ []) do
     case NetStorage.Request.execute(op, opts) do
       {:ok, _status, body} ->
