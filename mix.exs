@@ -1,6 +1,6 @@
 defmodule NetStorage.MixProject do
   @name :netstorage
-  @version "0.2.1"
+  @version "0.2.2"
 
   use Mix.Project
 
